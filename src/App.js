@@ -11,7 +11,9 @@ export default class App extends Component{
           <h1 className="header">Noteful</h1>
         </header>
         <main className="folder-container">
-          <Route path = '/folder' component={Folder} render= {(props) => store={this.props.store}}/>
+          <Route path = '/folder' render={(routeProps) => {
+            return <Folder store={this.props.store} {...routeProps} />;
+          }}/>
         </main>
       </div>
     );

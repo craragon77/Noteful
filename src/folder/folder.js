@@ -15,7 +15,9 @@ class Folder extends Component{
                         return(
                         <li key={item.id}>
                             <h2>{item.name}</h2>
-                            <Route path='/' component={Note} store={this.props.store} />
+                            <Route path='/note' render={(routeProps) =>{
+                                return <Note store={this.props.store} {...routeProps} />
+                            }} />
                         </li>
                         )
                     })
